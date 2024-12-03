@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "89e26131-a8ce-4a81-9081-cc63cd60763c",
+		"name": "tasks_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32762202"
+	},
+	"item": [
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "create_task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWVzbWF0QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0ODM3MywiZXhwIjoxNzMzODUzMTczfQ.qduhpk4xRIZxXiO97zeLnvmLVnp-WUzuRzEjsJBpFzM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"task #2\", // required\r\n    \"description\": \"task #2 description\",\r\n    \"priority\": \"HIGH\", // required;^(HIGH|MEDIUM|LOW)$\r\n    \"dueDate\": \"2024-12-03T22:00:00.683\" // required\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/tasks",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWVzbWF0QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0ODM3MywiZXhwIjoxNzMzODUzMTczfQ.qduhpk4xRIZxXiO97zeLnvmLVnp-WUzuRzEjsJBpFzM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"task #1\",\r\n    \"description\": \"task #1 description\",\r\n    \"priority\": \"HIGH\", // optional or (HIGH|MEDIUM|LOW)$\r\n    \"status\" : \"TODO\", // optional or (TODO|SCHEDULED|DONE)$\r\n    \"dueDate\": \"2024-12-02T22:18:21.683+00:00\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/tasks/20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all_task",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWVzbWF0QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0ODM3MywiZXhwIjoxNzMzODUzMTczfQ.qduhpk4xRIZxXiO97zeLnvmLVnp-WUzuRzEjsJBpFzM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/tasks?offset=1&pageSize=10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWVzbWF0QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0ODM3MywiZXhwIjoxNzMzODUzMTczfQ.qduhpk4xRIZxXiO97zeLnvmLVnp-WUzuRzEjsJBpFzM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/tasks/search?priority=HIGH&title=task&description=description&status=SCHEDULED&offset=2&pageSize=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"search"
+							],
+							"query": [
+								{
+									"key": "priority",
+									"value": "HIGH",
+									"description": "HIGH|MEDUIM|LOW"
+								},
+								{
+									"key": "title",
+									"value": "task",
+									"description": "min lenght is 3"
+								},
+								{
+									"key": "description",
+									"value": "description",
+									"description": "min length is 5"
+								},
+								{
+									"key": "status",
+									"value": "SCHEDULED",
+									"description": "TODO|SCHEDULED|DONE"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								},
+								{
+									"key": "pageSize",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_task_by_id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWVzbWF0QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0ODM3MywiZXhwIjoxNzMzODUzMTczfQ.qduhpk4xRIZxXiO97zeLnvmLVnp-WUzuRzEjsJBpFzM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/tasks/20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_task_by_id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWVzbWF0QGdtYWlsLmNvbSIsImlhdCI6MTczMzI0ODM3MywiZXhwIjoxNzMzODUzMTczfQ.qduhpk4xRIZxXiO97zeLnvmLVnp-WUzuRzEjsJBpFzM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/tasks/20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Muhammad\", // required\r\n    \"lastName\" : \"Ahmed\", // required\r\n    \"email\" : \"muesmat@gmail.com\", // required\r\n    \"password\" : \"qwertyuiop[]\", // required;min=10;max=100\r\n    \"role\" : \"ADMIN\" // required;^(ADMIN|USER)$\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"muesmat@gmail.com\",\r\n    \"password\" : \"qwertyuiop[]\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
