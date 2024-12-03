@@ -16,7 +16,7 @@ mvn spring-boot:run
 
 ## Usage
 
-### User signup : POST /api/v1/users (required only ADMIN)
+### User signup : POST /api/v1/users
 Request
 
 ```json
