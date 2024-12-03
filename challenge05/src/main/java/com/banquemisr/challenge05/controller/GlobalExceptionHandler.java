@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.controller;
+package com.banquemisr.challenge05.controller;
 
 import java.util.Date;
 
@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-import com.banquemisr.challenge05.controller.exception.InvalidCredentialsException;
-import com.banquemisr.challenge05.controller.exception.InvalidOrExpiredTokenException;
-import com.banquemisr.challenge05.controller.exception.TaskNotFoundException;
-import com.banquemisr.challenge05.controller.exception.UserAlreadyRegisteredException;
+import com.banquemisr.challenge05.exception.InvalidCredentialsException;
+import com.banquemisr.challenge05.exception.TaskNotFoundException;
+import com.banquemisr.challenge05.exception.UserAlreadyRegisteredException;
 import com.banquemisr.challenge05.resource.outbound.ErrorDetails;
 
 @ControllerAdvice

@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.controller;
+package com.banquemisr.challenge05.controller;
 
 import java.util.List;
 
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.banquemisr.challenge05.controller.service.TaskService;
 import com.banquemisr.challenge05.resource.inbound.PageInfo;
 import com.banquemisr.challenge05.resource.inbound.TaskCreateRequest;
 import com.banquemisr.challenge05.resource.inbound.TaskQueryParameters;
 import com.banquemisr.challenge05.resource.inbound.TaskUpdateRequest;
 import com.banquemisr.challenge05.resource.outbound.TaskDetailsResponse;
+import com.banquemisr.challenge05.service.TaskService;
 
 import jakarta.validation.Valid;
 

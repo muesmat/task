@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.model;
+package com.banquemisr.challenge05.model;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.service;
+package com.banquemisr.challenge05.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.banquemisr.challenge05.controller.model.User;
-import com.banquemisr.challenge05.controller.repository.UserRepository;
+import com.banquemisr.challenge05.model.User;
+import com.banquemisr.challenge05.repository.UserRepository;
 
 import java.util.HashSet;
 import java.util.Set;

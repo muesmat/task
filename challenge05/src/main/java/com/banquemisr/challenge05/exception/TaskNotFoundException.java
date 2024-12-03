@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.exception;
+package com.banquemisr.challenge05.exception;
 
 public class TaskNotFoundException extends RuntimeException {
 	 

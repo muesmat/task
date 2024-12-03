@@ -1,11 +1,11 @@
-package com.banquemisr.challenge05.controller.repository;
+package com.banquemisr.challenge05.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.banquemisr.challenge05.controller.model.User;
+import com.banquemisr.challenge05.model.User;
 
 
 @Repository

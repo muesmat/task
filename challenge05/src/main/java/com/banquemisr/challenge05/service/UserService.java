@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.service;
+package com.banquemisr.challenge05.service;
 
 import com.banquemisr.challenge05.resource.inbound.LoginRequest;
 import com.banquemisr.challenge05.resource.inbound.SignUpRequest;

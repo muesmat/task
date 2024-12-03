@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.service;
+package com.banquemisr.challenge05.service;
 
 import java.util.Optional;
 
@@ -11,9 +11,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.banquemisr.challenge05.config.JwtTokenProvider;
-import com.banquemisr.challenge05.controller.exception.UserAlreadyRegisteredException;
-import com.banquemisr.challenge05.controller.model.User;
-import com.banquemisr.challenge05.controller.repository.UserRepository;
+import com.banquemisr.challenge05.exception.UserAlreadyRegisteredException;
+import com.banquemisr.challenge05.model.User;
+import com.banquemisr.challenge05.repository.UserRepository;
 import com.banquemisr.challenge05.resource.inbound.LoginRequest;
 import com.banquemisr.challenge05.resource.inbound.SignUpRequest;
 import com.banquemisr.challenge05.resource.outbound.LoginResponse;

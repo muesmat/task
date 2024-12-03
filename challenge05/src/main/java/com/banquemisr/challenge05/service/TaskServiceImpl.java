@@ -1,4 +1,4 @@
-package com.banquemisr.challenge05.controller.service;
+package com.banquemisr.challenge05.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.banquemisr.challenge05.controller.exception.TaskNotFoundException;
-import com.banquemisr.challenge05.controller.model.Task;
-import com.banquemisr.challenge05.controller.repository.TaskRepository;
+import com.banquemisr.challenge05.exception.TaskNotFoundException;
+import com.banquemisr.challenge05.model.Task;
+import com.banquemisr.challenge05.repository.TaskRepository;
 import com.banquemisr.challenge05.resource.inbound.PageInfo;
 import com.banquemisr.challenge05.resource.inbound.TaskCreateRequest;
 import com.banquemisr.challenge05.resource.inbound.TaskQueryParameters;
