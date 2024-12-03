@@ -35,7 +35,7 @@ public class JwtTokenProvider {
                 .subject(username)
                 .issuedAt(new Date())
                 .expiration(expireDate)
-                .signWith(key(), SignatureAlgorithm.HS256)
+                .signWith(key())
                 .compact();
 
         return token;
